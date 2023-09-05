@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@font-face {
+    font-family:"melvin";
+    src: url("./assets/ARCADE.TTF");
+}
+@font-face {
+    font-family: "PlayMe" ;
+    src: url("./assets/PlayMeGames-Demo.otf");
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(rgba(37, 37, 37, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/hd/aesthetic-black-background-1920-x-1080-0kfw21pdqoj5trap.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.flex_centre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    text-align: center;
+}
+.title{
+    font-size: 13em;
+    margin-bottom: 20px;
+    font-family: 'melvin',sans-serif;
+    background: linear-gradient(to right, #303030,
+    #5359aa, #535353, #3b4d9e);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: lighter;
+}
+button{
+    font-family: 'PlayMe';
+    margin-top: 40px;
+    --blue: #1b75fd;
+    padding: 1em 2.8em;
+    letter-spacing: 0.3em;
+    border-radius: 13px;
+    transition: all 0.3s;
+    border: 2px solid #1b75fd;
+    background: linear-gradient(to right, rgba(27, 31, 253, 0.1), transparent 40%,transparent 60% , rgba(50, 27, 253, 0.1) 100%);
+    color: var(--blue);
+    box-shadow: inset 0 0 10px rgba(27, 31, 253, 0.4), 0 0 10px 5px rgba(27, 68, 253, 0.1);
+    cursor: pointer;
+}
+button:hover{
+    color: #82aeff;
+    box-shadow: inset 1px 1px 10px rgba(27, 151, 253, 0.6), 0 0 10px rgba(27, 170, 253, 0.2);
+}
+.play-button{
+    font-size: 3em;
+    font-weight: 900;
+}
+.instructions-button{
+    font-size: 1.6em;
+    margin-top: 20%;
+}
+
+.input{
+    width: 400px;
+    height: 50px;
+    border: transparent;
+    border-bottom: 2px solid #3f3f3f;
+    background: linear-gradient(to right, rgba(27, 31, 253, 0.1),transparent 50%,transparent 50%, rgba(50, 27, 253, 0.1) 100%);
+    transition: 0.3s linear;
+    font-family: 'PlayMe';
+    letter-spacing: 1px;
+    font-size: 1.6em;
+    color: #5885ff;
+}
+  
+.input:focus {
+    border: 2px solid #244cff;
+    color: #244cff;
+    box-shadow: 1px 1px 5px #5885ff;
+    font-size: 1.9em;
+}
+.nick, .user{
+    margin-top: 100px;
+    font-size: 6em;
+}
+#timer{
+    width: 10%;
+    position: absolute;
+    top: 1vh;
+    right: 1.5vh;
+    font-size: 6vw;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#lives{
+    width: 15%;
+    position: absolute;
+    top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#lives *{
+    width: 60px;
+}
+#instruct{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+
+}
+.popup{
+    text-decoration: 2px underline solid rgba(0, 0, 0, 0.74);
+    
+}
+.instruct-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #808080;
+    padding: 20px;
+    max-width: 80%;
+    box-shadow: inset 0 0 17px rgba(39, 57, 136, 0.76), 0 0 17px 8px rgba(39, 57, 136, 0.76) ;
+}
+.lists{
+    font-size: 3em;
+    font-family: 'melvin';
+    font-weight: lighter;
+    color: #0d1229;
+
+}
+#box-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid rgba(27, 151, 253, 0.6);
+    padding: 1px 10px;
+    color: #ff000094;
+    font-size: 30px;
+    cursor: pointer;
+}
+.score{
+    font-family: 'PlayMe';
+    font-size: 2em;
+    color:#244cff
+}
+.message{
+    font-size: 5em;
+    color: #244cff;
+}
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 5em;
+        font-weight: 900;
+    }
+
+    .input {
+        width: 80%; 
+    }
+    .play-button{
+        font-size: 2.5em;
+    }
+    .message{
+        font-size: 1.8em;
+    }
+}
