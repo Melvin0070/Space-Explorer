@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="flex_centre">
+    <form id ="form" action="">
     <h6 class="title user">Username</h6>
-    <input placeholder="Type here" class="input" name="text" type="text">
+    <input placeholder="  Enter" id="input" name="text" type="text" required/>
     <h6 class="title nick">Nickname</h6>
-    <input placeholder="Type here" class="input" name="text" type="text">
-    <button id="start">EXPLORE</button>
-
-<script>
-    explore = document.getElementById("start")
-    explore.addEventListener('click',()=>{
-    location.href="game.html"
-})
-</script>
+    <input placeholder="  Enter" id="input" name="text" type="text" required/>
+    <br>
+    <br>
+    <button id="buttons" type="submit">EXPLORE</button>
+</form>
 </body>
+<script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+        e.preventDefault(); 
+        const inputData = document.getElementById('input').value;
+        const url = 'destination.html?userInput=' + encodeURIComponent(inputData);
+        window.location.href = "game.html";
+    })
+
+</script>
 </html>

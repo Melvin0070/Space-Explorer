@@ -13,7 +13,19 @@
     <br>
     <br>
     <div class="lists message">There's a lot left to EXPLORE</div>
-    <button>Play Again</button>
+    <button id="play-again">Play Again</button>
+    <button id="Home">Home</button>
     
 </body>
+<script>
+    const playagain = document.getElementById("play-again")
+    const home = document.getElementById('Home')
+    playagain.addEventListener('click', ()=>{
+        location.href = "game.html"
+    })
+    home.addEventListener('click', ()=>{
+        location.href='index.html'
+    })
+    
+</script>
 </html>
