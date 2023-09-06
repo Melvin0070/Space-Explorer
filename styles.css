@@ -78,6 +78,7 @@ button:hover{
 }
   
 #input:focus {
+    background: linear-gradient(to right, rgba(27, 31, 253, 0.1),transparent 40%, transparent 60%, rgba(50, 27, 253, 0.1) 100%);
     outline: none;
     border: 2px solid #244cff transparent;
     color: #243fb4;
