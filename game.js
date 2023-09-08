@@ -39,6 +39,14 @@ window.addEventListener('mousemove', (e) => {
     spaceship.style.left = `${spaceshipPosLeft}px`;
     spaceship.style.bottom = `${spaceshipPosBottom}px`;
 });
+window.addEventListener('touchmove', (e) => {
+    spaceshipPosLeft = Math.min(e.clientX, document.documentElement.clientWidth- 10);
+    spaceshipPosBottom = Math.min(document.documentElement.clientHeight - e.clientY, boardHeight - 5);
+
+    spaceship.style.left = `${spaceshipPosLeft}px`;
+    spaceship.style.bottom = `${spaceshipPosBottom}px`;
+});
+
 
 // Fires bullet on pressing SpaceBar
 window.addEventListener('keydown', (e) => {
