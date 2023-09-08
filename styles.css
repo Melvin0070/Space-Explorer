@@ -182,8 +182,8 @@ button:hover{
 }
 #spaceship {
     position: absolute;
-    /* width: 200px;
-    height: 200px; */
+    width: 100px;
+    height: 100px;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%); /* center the spaceship initially */
@@ -191,14 +191,14 @@ button:hover{
   } 
 .asteroid {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
 }
 
 .gem {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
 }
 #gameboard {
     width: 100%; /* 80% of the viewport width */
@@ -249,5 +249,25 @@ button:hover{
         height: 100vh; /* 80% of the viewport height */
         position: relative; /* Ensure child elements are positioned relative to the gameboard */
         overflow: hidden; /* Hide any overflow beyond the gameboard dimensions */
-      }
+    }
+    .asteroid {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .gem {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+    #spaceship {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%); /* center the spaceship initially */
+        
+      } 
 }

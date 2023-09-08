@@ -9,7 +9,7 @@ const boardHeight = gameboard.clientHeight;
 const livesContainer = document.getElementById('lives');
 let spaceshipPosLeft = 300;
 let spaceshipPosBottom = 0;
-const spaceshipWidth = 10;
+// const spaceshipWidth = 10;
 let shootInterval;
 let spaceshipLife = 5;
 let score = 0;
@@ -97,7 +97,7 @@ function fireBullet() {
 // Removes the bullet after 3 seconds
 setInterval(()=>{
     bullet.remove();
-},3000)
+},2500)
 }
 
 window.addEventListener('keyup', (e) => {
@@ -116,12 +116,12 @@ function createAsteroid() {
   asteroid.classList.add('asteroid');
   gameboard.appendChild(asteroid);
 
-  asteroid.style.width = '300px'
-  asteroid.style.height ='300px'
+//   asteroid.style.width = '300px'
+//   asteroid.style.height ='300px'
   asteroid.style.left = `${Math.random() * boardWidth}px`;
   asteroid.style.top = '0px';
 
-  let speed = Math.random() * 5 + 1;
+  let speed = Math.random() * 10 + 1;
 
   let fall = setInterval(() => {
       let asteroidTop = parseInt(asteroid.style.top);
@@ -165,8 +165,8 @@ function createGem() {
   gem.classList.add('gem');
   gameboard.appendChild(gem);
 
-    gem.style.width = '80px'
-    gem.style.height = '80px'
+    // gem.style.width = '80px'
+    // gem.style.height = '80px'
     gem.style.left = `${Math.random() * boardWidth}px`;
     gem.style.top = '0px';
 
@@ -180,6 +180,7 @@ function createGem() {
             if(isColliding(spaceship, gem)) {
                 score += 5;
                 timer.innerText = score
+                localStorage.setItem('score',score)
                 gem.remove();
                 clearInterval(fall);
             }
@@ -190,6 +191,7 @@ function createGem() {
         }
     }, 10);
 }
+
 
 // Function to check collision using BounduingClientRect
 function isColliding(obj1, obj2) {
@@ -203,5 +205,5 @@ function isColliding(obj1, obj2) {
              rect1.top > rect2.bottom);
 }
 
-setInterval(createAsteroid, Math.random() * 1000 + 1000);
-setInterval(createGem, Math.random() * 1000 + 500);
+setInterval(createAsteroid, Math.random() * 500 + 800);
+setInterval(createGem, Math.random() * 2000 + 1000);
