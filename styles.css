@@ -11,12 +11,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* overflow: scroll; */
 }
 body{
     background: linear-gradient(rgba(37, 37, 37, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/hd/aesthetic-black-background-1920-x-1080-0kfw21pdqoj5trap.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 .flex_centre{
     display: flex;
@@ -64,10 +65,11 @@ button:hover{
     margin-top: 20%;
 }
 
-#input{
+#usernameInput, #nicknameInput{
     width: 400px;
     height: 50px;
     border: none;
+    margin: 0;
     border-bottom: 2px solid #3f3f3f;
     background: linear-gradient(to right, rgba(27, 31, 253, 0.1),transparent 40%, transparent 60%, rgba(50, 27, 253, 0.1) 100%);
     transition: 0.3s linear;
@@ -77,7 +79,7 @@ button:hover{
     color: #122d77;
 }
   
-#input:focus {
+#usernameInput:focus, #nicknameInput:focus{
     background: linear-gradient(to right, rgba(27, 31, 253, 0.1),transparent 40%, transparent 60%, rgba(50, 27, 253, 0.1) 100%);
     outline: none;
     border: 2px solid #244cff transparent;
@@ -172,71 +174,47 @@ button:hover{
 #play-again, #Home{
     font-size: 1.5em;
 }
-#gameboard {
-    position: relative;
-    width: 50vw;
-    height: 50vh;
-    border: 1px solid black;
-  }
-  
-  #spaceship {
+.bullet {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 10px;
+    height: 20px;
+    background-color: red;
+}
+#spaceship {
+    position: absolute;
+    /* width: 200px;
+    height: 200px; */
     bottom: 0;
     left: 50%;
     transform: translateX(-50%); /* center the spaceship initially */
     
-  }
-  
-  #bullet {
+  } 
+.asteroid {
     position: absolute;
-    width: 10px;
-    height: 25px;
-    background-color: red;
-    visibility: hidden;
-    border-radius: 50%;
-  }
-  
-  #enemy {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: url('enemy.png');
-  }
-
-
-
-
-
-.zombie-image {
-    position: absolute;
-    bottom: -100px;
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: flying 5s infinite ease-in;
-    z-index: 2;
-    width: 30vw;
-    height: 30vw;
-    max-width: 150px;
-    max-height: 150px;
+    width: 100px;
+    height: 100px;
 }
-@keyframes flying {
-    0% {
-        bottom: -100px;
-    }
 
-    100% {
-        bottom: 1080px;
-    }
+.gem {
+    position: absolute;
+    width: 30px;
+    height: 30px;
 }
+#gameboard {
+    width: 100%; /* 80% of the viewport width */
+    height: 100vh; /* 80% of the viewport height */
+    position: relative; /* Ensure child elements are positioned relative to the gameboard */
+    overflow: hidden; /* Hide any overflow beyond the gameboard dimensions */
+    cursor:none;
+  }
+
 @media screen and (max-width: 768px) {
     .title {
         font-size: 5em;
         font-weight: lighter;
     }
 
-    #input {
+    #usernameInput, #nicknameInput{
         width: 90%; 
     }
     .play-button{
@@ -265,6 +243,11 @@ button:hover{
     #lives{
         left:4vw
     }
-
-
+    #gameboard {
+        border: 5px solid red;
+        width: 100%; /* 80% of the viewport width */
+        height: 100vh; /* 80% of the viewport height */
+        position: relative; /* Ensure child elements are positioned relative to the gameboard */
+        overflow: hidden; /* Hide any overflow beyond the gameboard dimensions */
+      }
 }

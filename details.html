@@ -3,28 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Space Explorer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="flex_centre">
-    <form id ="form" action="">
+    <form id ="form" action="game.html">
     <h6 class="title user">Username</h6>
-    <input placeholder="  Enter" id="input" name="text" type="text" required/>
+    <input placeholder="  Enter" id="usernameInput" class="user" name="text" type="text" required/>
     <h6 class="title nick">Nickname</h6>
-    <input placeholder="  Enter" id="input" name="text" type="text" required/>
-    <br>
+    <input placeholder="  Enter" id="nicknameInput"  class="nick" name="text" type="text" required/>
     <br>
     <button id="buttons" type="submit">EXPLORE</button>
 </form>
 </body>
-<script>
-    document.getElementById('form').addEventListener('submit', function (e) {
-        e.preventDefault(); 
-        const inputData = document.getElementById('input').value;
-        const url = 'destination.html?userInput=' + encodeURIComponent(inputData);
-        window.location.href = "game.html";
-    })
-
-    
-</script>
+<script src="details.js"></script>
 </html>
