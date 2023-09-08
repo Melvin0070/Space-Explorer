@@ -14,10 +14,10 @@
     /* overflow: scroll; */
 }
 body{
-    background: linear-gradient(rgba(37, 37, 37, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/hd/aesthetic-black-background-1920-x-1080-0kfw21pdqoj5trap.jpg');
+    background: url('https://wallpapers.com/images/hd/aesthetic-black-background-1920-x-1080-0kfw21pdqoj5trap.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
 }
 .flex_centre{
     display: flex;
@@ -241,12 +241,11 @@ button:hover{
         font-size: 2em;
     }
     #lives{
-        left:4vw
+        left:15vw
     }
     #gameboard {
-        border: 5px solid red;
         width: 100%; /* 80% of the viewport width */
-        height: 100vh; /* 80% of the viewport height */
+        height: 90%; /* 80% of the viewport height */
         position: relative; /* Ensure child elements are positioned relative to the gameboard */
         overflow: hidden; /* Hide any overflow beyond the gameboard dimensions */
     }

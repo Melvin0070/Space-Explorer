@@ -14,4 +14,3 @@ const bgMuisc = new Audio('./assets/cosmos-space-game-action-shooter-astronauts-
 bgMuisc.play()
 bgMuisc.loop = true
 
-

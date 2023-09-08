@@ -9,14 +9,15 @@ const boardHeight = gameboard.clientHeight;
 const livesContainer = document.getElementById('lives');
 const shottmusic = new Audio('./assets/mixkit-short-laser-gun-shot-1670.wav')
 const bgMuisc = new Audio('./assets/cosmos-space-game-action-shooter-astronauts-scifi-aliens-142978.mp3')
+bgMuisc.play()
+bgMuisc.loop = true
+
 let spaceshipPosLeft = 300;
 let spaceshipPosBottom = 0;
 let shootInterval;
 let spaceshipLife = 5;
 let score = 0;
 
-bgMuisc.play()
-bgMuisc.loop = true
 
 // all asteroid images
 const asteroidImages = [

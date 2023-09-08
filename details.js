@@ -14,4 +14,3 @@ form.addEventListener('submit', function() {
 const bgMuisc = new Audio('./assets/cosmos-space-game-action-shooter-astronauts-scifi-aliens-142978.mp3')
 bgMuisc.play()
 bgMuisc.loop = true
-
