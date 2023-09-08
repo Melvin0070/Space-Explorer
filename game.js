@@ -9,6 +9,8 @@ const boardHeight = gameboard.clientHeight;
 const livesContainer = document.getElementById('lives');
 const shottmusic = new Audio('./assets/mixkit-short-laser-gun-shot-1670.wav')
 const bgMuisc = new Audio('./assets/cosmos-space-game-action-shooter-astronauts-scifi-aliens-142978.mp3')
+const gemSound = new Audio('./assets/notification-positive-bell-epic-stock-media-1-00-01.mp3')
+const lifeDown = new Audio('./assets/arcade-game-retro-8-bit-losing-points-floor-model-1-00-00.mp3')
 bgMuisc.play()
 bgMuisc.loop = true
 
@@ -154,6 +156,8 @@ function createAsteroid() {
 
           if (isColliding(spaceship, asteroid)) {
             spaceshipLife--
+            lifeDown.currentTime = 0
+            lifeDown.play()
             removeHeart()
               if (spaceshipLife <= 0) {
                   gameOver();
@@ -201,6 +205,8 @@ function createGem() {
 
             if(isColliding(spaceship, gem)) {
                 score += 5;
+                gemSound.currentTime = 0 
+                gemSound.play()
                 timer.innerText = score
                 localStorage.setItem('score',score)
                 gem.remove();
