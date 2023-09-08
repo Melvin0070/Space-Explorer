@@ -7,14 +7,16 @@ const timer = document.getElementById('timer');
 const boardWidth = gameboard.clientWidth; 
 const boardHeight = gameboard.clientHeight;
 const livesContainer = document.getElementById('lives');
+const shottmusic = new Audio('./assets/mixkit-short-laser-gun-shot-1670.wav')
+const bgMuisc = new Audio('./assets/cosmos-space-game-action-shooter-astronauts-scifi-aliens-142978.mp3')
 let spaceshipPosLeft = 300;
 let spaceshipPosBottom = 0;
-// const spaceshipWidth = 10;
 let shootInterval;
 let spaceshipLife = 5;
 let score = 0;
 
-
+bgMuisc.play()
+bgMuisc.loop = true
 
 // all asteroid images
 const asteroidImages = [
@@ -39,19 +41,34 @@ window.addEventListener('mousemove', (e) => {
     spaceship.style.left = `${spaceshipPosLeft}px`;
     spaceship.style.bottom = `${spaceshipPosBottom}px`;
 });
-window.addEventListener('touchmove', (e) => {
-    spaceshipPosLeft = Math.min(e.clientX, document.documentElement.clientWidth- 10);
-    spaceshipPosBottom = Math.min(document.documentElement.clientHeight - e.clientY, boardHeight - 5);
 
-    spaceship.style.left = `${spaceshipPosLeft}px`;
-    spaceship.style.bottom = `${spaceshipPosBottom}px`;
+// References from  W3schools, Medium (JHey Thompkins), Phind
+let touchStartX = null;
+window.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+window.addEventListener('touchmove', (e) => {
+    if (touchStartX !== null) {
+        const touchX = e.touches[0].clientX;
+        const deltaX = touchX - touchStartX;
+        spaceshipPosLeft = Math.min(spaceshipPosLeft + deltaX, boardWidth - 10);
+        spaceship.style.left = `${spaceshipPosLeft}px`;
+
+        touchStartX = touchX; // Update the initial touch position
+    }
 });
 
+window.addEventListener('touchend', () => {
+    touchStartX = null; // Reset the initial touch position when touch ends
+});
 
 // Fires bullet on pressing SpaceBar
 window.addEventListener('keydown', (e) => {
     if (e.keyCode === 32) {
         fireBullet();
+        shottmusic.currentTime=0
+        shottmusic.play()
+
     }
 });
 

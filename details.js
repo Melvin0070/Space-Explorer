@@ -11,3 +11,7 @@ form.addEventListener('submit', function() {
     localStorage.setItem('username', username);
     localStorage.setItem('nickname', nickname);
 });
+const bgMuisc = new Audio('./assets/cosmos-space-game-action-shooter-astronauts-scifi-aliens-142978.mp3')
+bgMuisc.play()
+bgMuisc.loop = true
+
