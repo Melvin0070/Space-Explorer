@@ -7,7 +7,6 @@ const timer = document.getElementById('timer');
 const boardWidth = gameboard.clientWidth; 
 const boardHeight = gameboard.clientHeight;
 const livesContainer = document.getElementById('lives');
-
 let spaceshipPosLeft = 300;
 let spaceshipPosBottom = 0;
 const spaceshipWidth = 10;
@@ -130,6 +129,8 @@ function createAsteroid() {
           asteroid.style.top = `${asteroidTop + speed}px`;
 
           if (isColliding(spaceship, asteroid)) {
+            spaceshipLife--
+            removeHeart()
               if (spaceshipLife <= 0) {
                   gameOver();
               }
@@ -142,8 +143,18 @@ function createAsteroid() {
       }
   }, 10);
 }
+
+
 function gameOver(){
   location.href = "gameover.html"
+}
+
+function removeHeart(){
+    if (spaceshipLife >= 1) {
+        const heart = document.getElementById(`heart-${spaceshipLife}`);
+        heart.style.display = 'none';
+    }
+
 }
 
 // Creates Gem
