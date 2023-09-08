@@ -11,7 +11,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* overflow: scroll; */
+    overflow: hidden;
 }
 body{
     background: url('https://wallpapers.com/images/hd/aesthetic-black-background-1920-x-1080-0kfw21pdqoj5trap.jpg');
@@ -28,8 +28,8 @@ body{
     text-align: center;
 }
 .title{
-    font-size: 13em;
-    margin-bottom: 20px;
+    font-size: 10vw;
+    margin-bottom: 2vw;
     font-family: 'melvin',sans-serif;
     background: linear-gradient(to right, #303030,
     #5359aa, #535353, #3b4d9e);
@@ -40,7 +40,7 @@ body{
 }
 button{
     font-family: 'PlayMe';
-    margin-top: 40px;
+    margin-top: 4vw;
     --blue: #1b75fd;
     padding: 1em 2.8em;
     letter-spacing: 0.3em;
@@ -64,7 +64,9 @@ button:hover{
     font-size: 1.6em;
     margin-top: 20%;
 }
-
+#form{
+    width: 100%;
+}
 #usernameInput, #nicknameInput{
     width: 400px;
     height: 50px;
@@ -202,10 +204,9 @@ button:hover{
     height: 80px;
 }
 #gameboard {
-    width: 100%; /* 80% of the viewport width */
-    height: 100vh; /* 80% of the viewport height */
-    position: relative; /* Ensure child elements are positioned relative to the gameboard */
-    overflow: hidden; /* Hide any overflow beyond the gameboard dimensions */
+    width: 100%; 
+    height: 100vh; 
+    position: relative; 
     cursor:none;
   }
 
@@ -250,7 +251,7 @@ button:hover{
     }
     #gameboard {
         width: 100%;
-        height: 65vh; 
+        height: 100vh; 
         position: relative; 
         overflow: hidden; 
     }
@@ -274,4 +275,7 @@ button:hover{
         transform: translateX(-50%); /* center the spaceship initially */
         
       } 
+    .over{
+        font-size: 6em;
+    }
 }
