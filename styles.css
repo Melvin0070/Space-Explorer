@@ -177,6 +177,7 @@ button:hover{
 .bullet {
     position: absolute;
     width: 10px;
+    border-radius: 30%;
     height: 20px;
     background-color: red;
 }
@@ -244,10 +245,10 @@ button:hover{
         left:15vw
     }
     #gameboard {
-        width: 100%; /* 80% of the viewport width */
-        height: 90%; /* 80% of the viewport height */
-        position: relative; /* Ensure child elements are positioned relative to the gameboard */
-        overflow: hidden; /* Hide any overflow beyond the gameboard dimensions */
+        width: 100%;
+        height: 100vh; 
+        position: relative; 
+        overflow: hidden; 
     }
     .asteroid {
         position: absolute;

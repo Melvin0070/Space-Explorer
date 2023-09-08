@@ -52,7 +52,7 @@ window.addEventListener('touchmove', (e) => {
     if (touchStartX !== null) {
         const touchX = e.touches[0].clientX;
         const deltaX = touchX - touchStartX;
-        spaceshipPosLeft = Math.min(spaceshipPosLeft + deltaX, boardWidth - 10);
+        spaceshipPosLeft = Math.min(spaceshipPosLeft + deltaX, document.documentElement.clientWidth - 10);
         spaceship.style.left = `${spaceshipPosLeft}px`;
 
         touchStartX = touchX; // Update the initial touch position
@@ -142,8 +142,6 @@ function createAsteroid() {
   asteroid.classList.add('asteroid');
   gameboard.appendChild(asteroid);
 
-//   asteroid.style.width = '300px'
-//   asteroid.style.height ='300px'
   asteroid.style.left = `${Math.random() * boardWidth}px`;
   asteroid.style.top = '0px';
 
@@ -191,8 +189,6 @@ function createGem() {
   gem.classList.add('gem');
   gameboard.appendChild(gem);
 
-    // gem.style.width = '80px'
-    // gem.style.height = '80px'
     gem.style.left = `${Math.random() * boardWidth}px`;
     gem.style.top = '0px';
 
