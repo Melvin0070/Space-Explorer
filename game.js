@@ -91,7 +91,7 @@ function fireBullet() {
     let shot = setInterval(() => {
         let bulletBottom = parseInt(bullet.style.bottom);
         if (bulletBottom > 0) {
-            bullet.style.bottom = `${bulletBottom +10}px`;
+            bullet.style.bottom = `${bulletBottom +10}px`; //Makes the bullet vertically upwards
             let asteroids = document.querySelectorAll('.asteroid');
 
             // Check it the bullet hits the asteroid
@@ -99,7 +99,7 @@ function fireBullet() {
                 if(isColliding(bullet, asteroids[i])) {
                     bullet.remove();
                     asteroids[i].remove();
-                    // clearInterval(shot);
+                    clearInterval(shot);
                     break;
                 }
             }
@@ -127,7 +127,7 @@ setInterval(()=>{
     bullet.remove();
 },2500)
 }
-
+// to clear shoot inerval
 window.addEventListener('keyup', (e) => {
     if (e.key === ' ') {
         clearInterval(shootInterval);
@@ -147,12 +147,12 @@ function createAsteroid() {
   asteroid.style.left = `${Math.random() * boardWidth}px`;
   asteroid.style.top = '0px';
 
-  let speed = Math.random() * 10 + 1;
+  let speed = Math.random() * 10 + 1; //random speed for the asteroid
 
   let fall = setInterval(() => {
       let asteroidTop = parseInt(asteroid.style.top);
       if (asteroidTop < boardHeight) {
-          asteroid.style.top = `${asteroidTop + speed}px`;
+          asteroid.style.top = `${asteroidTop + speed}px`; //Makes the asteroid move
 
           if (isColliding(spaceship, asteroid)) {
             spaceshipLife--
@@ -171,6 +171,8 @@ function createAsteroid() {
       }
   }, 10);
 }
+
+// to get the highscore
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 
 function gameOver(){
@@ -182,6 +184,7 @@ function gameOver(){
 
 }
 
+// To remove the heart if the life is reduced
 function removeHeart(){
     if (spaceshipLife >= 1) {
         const heart = document.getElementById(`heart-${spaceshipLife}`);
@@ -237,7 +240,7 @@ function isColliding(obj1, obj2) {
              rect1.bottom < rect2.top || 
              rect1.top > rect2.bottom);
 }
-
+// Random time interval for both objects
 setInterval(createAsteroid, Math.random() * 500 + 800);
 setInterval(createGem, Math.random() * 2000 + 1000);
 
