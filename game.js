@@ -23,7 +23,7 @@ let score = 0;
 
 // all asteroid images
 const asteroidImages = [
-  './assets/Meteor (fire).png',
+  './assets/output-onlinegiftools (1).gif',
   './assets/stone-4317076_1920-removebg.png',
   './assets/output-onlinegiftools.gif',
   'assets/meteorite-1--unscreen.gif'
@@ -171,10 +171,15 @@ function createAsteroid() {
       }
   }, 10);
 }
+let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 
 
 function gameOver(){
   location.href = "gameover.html"
+  if (score > highscore) {
+    highscore = score
+    localStorage.setItem("highscore",highscore)
+}
 
 }
 
@@ -237,9 +242,4 @@ function isColliding(obj1, obj2) {
 setInterval(createAsteroid, Math.random() * 500 + 800);
 setInterval(createGem, Math.random() * 2000 + 1000);
 
-let currentScore = localStorage.getItem("score");
-let highScore = localStorage.getItem("highScore");
-if(!highScore || parseFloat(highScore)<=parseFloat(currentScore)){
-    highScore=currentScore;
-    localStorage.setItem("highScore",highScore);
-}
+

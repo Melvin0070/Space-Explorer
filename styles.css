@@ -107,7 +107,6 @@ button:hover{
     justify-content: space-evenly;
 }
 #lives{
-    width: 40%;
     position: absolute;
     top: 1vh;
     left: 0.5vh;
@@ -274,5 +273,11 @@ button:hover{
       } 
     .over{
         font-size: 6em;
+    }
+    #lives{
+        width: 40%;
+    }
+    #highScore{
+        font-size: 3.5em;
     }
 }
