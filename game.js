@@ -36,7 +36,7 @@ const gemImages = [
   './assets/gem-3.png',
 ];
 
-// SpaceShip Movement 
+// SpaceShip Movement, W3 schools, Medium
 window.addEventListener('mousemove', (e) => {
     spaceshipPosLeft = Math.min(e.clientX, document.documentElement.clientWidth- 10);
     spaceshipPosBottom = Math.min(document.documentElement.clientHeight - e.clientY, boardHeight - 5);
@@ -99,7 +99,7 @@ function fireBullet() {
                 if(isColliding(bullet, asteroids[i])) {
                     bullet.remove();
                     asteroids[i].remove();
-                    clearInterval(shot);
+                    // clearInterval(shot);
                     break;
                 }
             }
@@ -172,7 +172,6 @@ function createAsteroid() {
   }, 10);
 }
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
-
 
 function gameOver(){
   location.href = "gameover.html"

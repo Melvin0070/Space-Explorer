@@ -31,10 +31,11 @@ body{
     font-size: 10vw;
     margin-bottom: 2vw;
     font-family: 'melvin',sans-serif;
-    background: linear-gradient(to right, #303030,
+    /* w4schools */
+    background: linear-gradient(to right, #303030, 
     #5359aa, #535353, #3b4d9e);
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; 
     font-weight: lighter;
     
 }
