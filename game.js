@@ -3,8 +3,8 @@
 
 const spaceship = document.getElementById('spaceship');
 const gameboard = document.getElementById('gameboard');
-const timer = document.getElementById('timer');
-const boardWidth = gameboard.clientWidth; 
+const userscore = document.getElementById('score');
+const boardWidth = gameboard.clientWidth; //height of the cone
 const boardHeight = gameboard.clientHeight;
 const livesContainer = document.getElementById('lives');
 const shottmusic = new Audio('./assets/mixkit-short-laser-gun-shot-1670.wav')
@@ -67,7 +67,7 @@ window.addEventListener('touchend', () => {
 
 // Fires bullet on pressing SpaceBar
 window.addEventListener('keydown', (e) => {
-    if (e.keyCode === 32) {
+    if (e.key === ' ') {
         fireBullet();
         shottmusic.currentTime=0
         shottmusic.play()
@@ -129,7 +129,7 @@ setInterval(()=>{
 }
 
 window.addEventListener('keyup', (e) => {
-    if (e.keyCode === 32) {
+    if (e.key === ' ') {
         clearInterval(shootInterval);
     }
 });
@@ -175,6 +175,7 @@ function createAsteroid() {
 
 function gameOver(){
   location.href = "gameover.html"
+
 }
 
 function removeHeart(){
@@ -207,7 +208,7 @@ function createGem() {
                 score += 5;
                 gemSound.currentTime = 0 
                 gemSound.play()
-                timer.innerText = score
+                userscore.innerText = score
                 localStorage.setItem('score',score)
                 gem.remove();
                 clearInterval(fall);
@@ -235,3 +236,10 @@ function isColliding(obj1, obj2) {
 
 setInterval(createAsteroid, Math.random() * 500 + 800);
 setInterval(createGem, Math.random() * 2000 + 1000);
+
+let currentScore = localStorage.getItem("score");
+let highScore = localStorage.getItem("highScore");
+if(!highScore || parseFloat(highScore)<=parseFloat(currentScore)){
+    highScore=currentScore;
+    localStorage.setItem("highScore",highScore);
+}

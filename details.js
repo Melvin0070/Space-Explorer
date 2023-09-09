@@ -5,7 +5,6 @@ const form = document.getElementById('form'); //Bug fix by GPT, (button -> form)
 
 // Javascript Object to store name abd nick name
 let player = {
-
 }
 
 form.addEventListener('submit', function() {
