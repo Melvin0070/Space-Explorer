@@ -38,8 +38,8 @@ const gemImages = [
 
 // SpaceShip Movement, W3 schools, Medium
 window.addEventListener('mousemove', (e) => {
-    spaceshipPosLeft = Math.min(e.clientX, document.documentElement.clientWidth- 10);
-    spaceshipPosBottom = Math.min(document.documentElement.clientHeight - e.clientY, boardHeight - 5);
+    spaceshipPosLeft = e.clientX;
+    spaceshipPosBottom = document.documentElement.clientHeight - e.clientY
 
     spaceship.style.left = `${spaceshipPosLeft}px`;
     spaceship.style.bottom = `${spaceshipPosBottom}px`;
