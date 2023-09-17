@@ -7,9 +7,10 @@ const nick = localStorage.getItem('nickname')
 let mes = document.getElementById('mess')
 let scoress = document.getElementById('scores')
 // List of messages
-let LostMessage = [`The space is vast ${nick}, Gear UP! <br> There is a lot left to EXPLORE `, `Let's go ${nick}, The gems are waiting to collected <br> There is a lot left to EXPLORE`, `We could do better ${nick}, Ready UP! <br> There is a lot left to EXPLORE`]
-let WinMessage = [`Well done ${nick}, You are a great sailor of space <br> Let's Explore`, `Lovely run ${nick}, We live rich! <br> Let's EXPLORE`, `Great job ${nick}, That's imppressive <br> Let's Explore`]
-
+// let LostMessage = [`The space is vast ${nick}, Gear UP! <br> There is a lot left to EXPLORE `, `Let's go ${nick}, The gems are waiting to collected <br> There is a lot left to EXPLORE`, `We could do better ${nick}, Ready UP! <br> There is a lot left to EXPLORE`]
+// let WinMessage = [`Well done ${nick}, You are a great sailor of space <br> Let's Explore`, `Lovely run ${nick}, We live rich! <br> Let's EXPLORE`, `Great job ${nick}, That's imppressive <br> Let's Explore`]
+let WinMessage = ['I love you Blessy']
+let LostMessage = [' I love you Blessy']
 
 playagain.addEventListener('click', ()=>{
     location.href = "game.html"
